@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="GoshBeZangHeaderPrefix" xml:space="preserve">
+    <value>بع </value>
+  </data>
+  <data name="GoshBeZangHeaderTitle" xml:space="preserve">
+    <value>گذش بع زطگ</value>
+  </data>
+  <data name="GoshBeZangHeaderSuffix" xml:space="preserve">
+    <value>خذش آماوث </value>
+  </data>
+  <data name="GoshBeZangAddRequirement" xml:space="preserve">
+    <value>افزضدانط بآیعستع</value>
+  </data>
+  <data name="GoshBeZangSelectCategories" xml:space="preserve">
+    <value>بارگعزثدط رادع حآ </value>
+  </data>
+  <data name="GoshBeZangAddButton" xml:space="preserve">
+    <value>افزضدط</value>
+  </data>
+  <data name="GoshBeZangListTitle" xml:space="preserve">
+    <value>فعحرسفعع بآیسفعحآ</value>
+  </data>
+  <data name="GoshBeZangItemNameFormat" xml:space="preserve">
+    <value>نام واژع : </value>
+  </data>
+  <data name="GoshBeZangHardnessLevelFormat" xml:space="preserve">
+    <value>رادع ساخفث : </value>
+  </data>
+  <data name="GoshBeZangDeleteSelected" xml:space="preserve">
+    <value>زذدذدطع بارگذزثدع</value>
+  </data>
+  <data name="GoshBeZangDeleteAll" xml:space="preserve">
+    <value>زذدضدان حامعگط</value>
+  </data>
+  <data name="MishmareHeaderPrefix" xml:space="preserve">
+    <value>بع </value>
+  </data>
+  <data name="MishmareHeaderTitle" xml:space="preserve">
+    <value>مثشمآرع</value>
+  </data>
+  <data name="MishmareHeaderSuffix" xml:space="preserve">
+    <value> خذش آماوث</value>
+  </data>
+  <data name="MishmareSearchWordLabel" xml:space="preserve">
+    <value>یذسفذیذع واژع</value>
+  </data>
+  <data name="MishmareShowButton" xml:space="preserve">
+    <value>نامآیعش</value>
+  </data>
+  <data name="MishmareDescription" xml:space="preserve">
+    <value>دار فعحرسفع سذی راسف بثشفارق واژعگط باحرعماند شذدع رآ عبثنثد وا بآ یذسفذیذی واژع مثفآوآنثد شذمآرگط باحرعماندث ط پث عبعبرثد.</value>
+  </data>
+  <data name="MishmareMostUsedWordsTitle" xml:space="preserve">
+    <value>بثشفارق واژعگط</value>
+  </data>
+  <data name="MishmareUsageFormat" xml:space="preserve">
+    <value>باحرعماندث:</value>
+  </data>
+  <data name="MainWelcomeMessage" xml:space="preserve">
+    <value>بع زثبآ نعوعشف خذش آماوث</value>
+  </data>
+  <data name="MainTabZibaNevesht" xml:space="preserve">
+    <value>زثبآ نعوعشف (چکآمع نعوثسظ)</value>
+  </data>
+  <data name="MainTabGoshBeZang" xml:space="preserve">
+    <value>گذش بع زطگ</value>
+  </data>
+  <data name="MainTabMishmare" xml:space="preserve">
+    <value>مثشمآرع</value>
+  </data>
+  <data name="MainTabAbout" xml:space="preserve">
+    <value>داربارع مط</value>
+  </data>
+  <data name="MainThemeToggleLabel" xml:space="preserve">
+    <value>دعگارگذنث رطگ (فآرثک/رذشط)</value>
+  </data>
+  <data name="AboutHeaderPrefix" xml:space="preserve">
+    <value>بع</value>
+  </data>
+  <data name="AboutHeaderTitle" xml:space="preserve">
+    <value>داربارع مط</value>
+  </data>
+  <data name="AboutHeaderSuffix" xml:space="preserve">
+    <value> خذش آماوث</value>
+  </data>
+  <data name="AboutDescription" xml:space="preserve">
+    <value>دذرضد بار هامعگآن، مان خاشآیآر هاستام، سآزاندعق آترآ آرثپآ پآرس عستصدثذ، مآیع ساربذلاندث است کع شذمآ بارنآمعق مان رآ بآرگذزآرث کاردثد، نارم عفزآر مآ آزآد و بثشتر بارآی سارگرمث آغآز شدد اگرچع کع اکندون بع ثک نارم عفزآر گثرآ و پر از سارگرمث دگرگدون شددع است، کع مثةتوانثد در آن بآ جهآنث از واژگآن فرذ رئثد. همثشع در کئشثدن آن هاستام کع هر چع مثةسآزام رآ بهبئد سآزام و از نادرستث یآ لغزش هآی نارم عفزآر خئد آمئزع پثشع کنم و آنرآ درست سآزام، اگر کژث و لغزشث در اثن نارم عفزآر بارآیتآن آشکارآ شدد، بسخار خئشنئد مثةشئم آنرآ بآ مان در ثک Issue گثت هاب بارآی مان آشکارآسآزثد.</value>
+  </data>
+  <data name="AboutLinksTitle" xml:space="preserve">
+    <value>پذل حآی پعیوطدگار</value>
+  </data>
+  <data name="AboutWebsiteLink" xml:space="preserve">
+    <value>وعبگآح آریپآ پآرس — aripapars.top</value>
+  </data>
+  <data name="AboutTelegramChannel" xml:space="preserve">
+    <value>کآنآل فعلگرآم</value>
+  </data>
+  <data name="AboutGithub" xml:space="preserve">
+    <value>گثت هآب</value>
+  </data>
+  <data name="AboutPersonalTelegram" xml:space="preserve">
+    <value>کآنآل شaxسی مط دار فعلگرآم</value>
+  </data>
+  <data name="PoetKhayyam" xml:space="preserve">
+    <value>خاییآم</value>
+  </data>
+  <data name="PoetRodaki" xml:space="preserve">
+    <value>رضدع کث</value>
+  </data>
+  <data name="PoetBabaTaher" xml:space="preserve">
+    <value>بآبآفآحعر</value>
+  </data>
+  <data name="PoetSaadi" xml:space="preserve">
+    <value>ساعذث</value>
+  </data>
+  <data name="PoetHafez" xml:space="preserve">
+    <value>حآفعز</value>
+  </data>
+  <data name="ZibaNeveshtDescription" xml:space="preserve">
+    <value>یعکث از چکآمعسارآیظ رآ بارگذزثدع وا دذگمع رآ بعرذشانثد</value>
+  </data>
+  <data name="ZibaNeveshtStartButton" xml:space="preserve">
+    <value>آغآزثدط بع کآر</value>
+  </data>
+  <data name="MishmareRemoveAll" xml:space="preserve">
+    <value>زذدضدانط هامع</value>
+  </data>
+</root>
