@@ -1,0 +1,247 @@
+﻿<UserControl x:Class="ZibaNevesht.UserControls.UCmishmare"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:ZibaNevesht.ViewModels"
+             xmlns:local="clr-namespace:ZibaNevesht.UserControls"
+             xmlns:services="clr-namespace:ZibaNevesht.Services"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <vm:MainViewModel></vm:MainViewModel>
+    </UserControl.DataContext>
+    <UserControl.Resources>
+
+        <Style x:Key="CardStyle" TargetType="Border">
+            <Setter Property="Background" Value="{DynamicResource CardBackgroundBrush}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource BorderBrushTheme}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="{DynamicResource CardCornerRadius}"/>
+            <Setter Property="Padding" Value="15"/>
+            <Setter Property="Margin" Value="8"/>
+        </Style>
+
+        <Style x:Key="TitleStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="0,0,0,8"/>
+        </Style>
+
+        <Style x:Key="InfoStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Margin" Value="0,4"/>
+        </Style>
+
+        <Style x:Key="ValueStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryBrush}"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="0,2,0,12"/>
+        </Style>
+
+        <Style x:Key="SearchBoxStyle" TargetType="TextBox">
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Margin" Value="0,5"/>
+            <Setter Property="Padding" Value="8"/>
+        </Style>
+
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="{DynamicResource PrimaryBrush}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Height" Value="38"/>
+            <Setter Property="Width" Value="120"/>
+            <Setter Property="Margin" Value="0,10,0,0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+
+    </UserControl.Resources>
+
+    <Grid Background="{DynamicResource PageBackgroundBrush}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Margin="15"
+                Padding="12"
+                Background="{DynamicResource CardBackgroundBrush}"
+                CornerRadius="{DynamicResource CardCornerRadius}"
+                BorderBrush="{DynamicResource BorderBrushTheme}"
+                BorderThickness="1">
+
+            <TextBlock FontSize="22"
+                       HorizontalAlignment="Center"
+                       Foreground="{DynamicResource TextBrush}"
+                       FontFamily="{DynamicResource PersianFont}">
+
+                <Run Text="{Binding Path=[MishmareHeaderPrefix], Source={x:Static services:LocalizationProvider.Instance}, Mode=OneWay}"/>
+                <Run Text="{Binding Path=[MishmareHeaderTitle], Source={x:Static services:LocalizationProvider.Instance}, Mode=OneWay}"
+                     FontWeight="Bold"
+                     Foreground="{DynamicResource PrimaryBrush}"/>
+                <Run Text="{Binding Path=[MishmareHeaderSuffix], Source={x:Static services:LocalizationProvider.Instance}, Mode=OneWay}"/>
+
+            </TextBlock>
+
+        </Border>
+
+        <Grid Grid.Row="1"
+              Margin="15">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Border Style="{StaticResource CardStyle}">
+
+                    <StackPanel>
+
+                        <TextBlock Text="{Binding Path=[MishmareSearchWordLabel], Source={x:Static services:LocalizationProvider.Instance}, Mode=OneWay}"
+                                   Style="{StaticResource TitleStyle}"
+                                   TextAlignment="Right"
+                                   FontFamily="{DynamicResource PersianFont}"/>
+
+                        <TextBox Style="{StaticResource SearchBoxStyle}"
+                                 Text="{Binding VmMishmarePage.TxtUserSearchInput}"
+                                 FontFamily="{DynamicResource PersianFont}"/>
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+
+                            <Button Content="{Binding Path=[MishmareShowButton], Source={x:Static services:LocalizationProvider.Instance}, Mode=OneWay}"
+                                    Style="{StaticResource ButtonStyle}"
+                                    Command="{Binding VmMishmarePage.btnShowSerachingCommandCommand}"
+                                    FontFamily="{DynamicResource PersianFont}"
+                                    Margin="5,0,0,0"
+                                    />
+
+                            <Button Content="{Binding Path=[MishmareRemoveAll], Source={x:Static services:LocalizationProvider.Instance}, Mode=OneWay}"
+                                    Style="{StaticResource ButtonStyle}"
+                                    Command="{Binding VmMishmarePage.btnRemoveAllCommandCommand}"
+                                    FontFamily="{DynamicResource PersianFont}"
+                                    Width="170"
+                                    Margin="5,0,0,0"/>
+
+                        </StackPanel>
+
+                    </StackPanel>
+
+                </Border>
+
+                <Border Grid.Row="1"
+                        Style="{StaticResource CardStyle}">
+
+                    <TextBlock
+                        TextWrapping="Wrap"
+                        Foreground="{DynamicResource MutedTextBrush}"
+                        FontSize="14"
+                        FontFamily="{DynamicResource PersianFont}"
+                        Text="{Binding Path=[MishmareDescription], Source={x:Static services:LocalizationProvider.Instance}, Mode=OneWay}"/>
+
+                </Border>
+
+            </Grid>
+            <Border Grid.Column="1"
+                    Style="{StaticResource CardStyle}">
+
+                <DockPanel>
+
+                    <TextBlock DockPanel.Dock="Top"
+               Text="{Binding Path=[MishmareMostUsedWordsTitle], Source={x:Static services:LocalizationProvider.Instance}, Mode=OneWay}"
+               TextAlignment="Right"
+               Style="{StaticResource TitleStyle}"
+               FontFamily="{DynamicResource PersianFont}"/>
+
+
+                    <Border DockPanel.Dock="Bottom" 
+                            Margin="0,10,0,0" 
+                            Padding="8,4" 
+                            CornerRadius="15" 
+                            HorizontalAlignment="Center" 
+                            Background="{DynamicResource CardBackgroundBrush}" 
+                            BorderBrush="{DynamicResource BorderBrushTheme}" 
+                            BorderThickness="1">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Refresh: " 
+                                       Foreground="{DynamicResource MutedTextBrush}" 
+                                       FontSize="12" 
+                                       VerticalAlignment="Center" 
+                                       FontFamily="Segoe UI Semibold"/>
+                            <TextBlock Text="{Binding VmMishmarePage.RefreshTimeText}" 
+                                       Foreground="{DynamicResource TextBrush}" 
+                                       FontSize="12" 
+                                       FontWeight="Bold" 
+                                       VerticalAlignment="Center" 
+                                       FontFamily="Consolas"/>
+                        </StackPanel>
+                    </Border>
+
+                    <ListBox ItemsSource="{Binding VmMishmarePage.Words}"
+             Background="Transparent"
+             BorderThickness="0"
+             ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+             ScrollViewer.VerticalScrollBarVisibility="Auto">
+
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+
+                                <Border Margin="3"
+                        Padding="10"
+                        CornerRadius="8"
+                        Background="{DynamicResource CardBackgroundBrush}"
+                        BorderBrush="{DynamicResource BorderBrushTheme}"
+                        BorderThickness="1">
+
+                                    <StackPanel>
+
+                                        <TextBlock Text="{Binding Name}"
+                                   FontWeight="Bold"
+                                   FontSize="16"
+                                   Foreground="{DynamicResource TextBrush}"
+                                  />
+
+                                        <TextBlock Margin="0,5,0,0"
+                                   FontSize="13"
+                                   Foreground="{DynamicResource MutedTextBrush}"
+                                   FontFamily="{DynamicResource PersianFont}">
+                            <Run Text="{Binding Path=[MishmareUsageFormat], Source={x:Static services:LocalizationProvider.Instance}, Mode=OneWay}"/>
+                            <Run Text="{Binding NumberOfUsedWord}"/>
+                                        </TextBlock>
+
+                                    </StackPanel>
+
+                                </Border>
+
+                            </DataTemplate>
+
+                        </ListBox.ItemTemplate>
+
+                    </ListBox>
+
+                    
+
+                </DockPanel>
+
+            </Border>
+
+        </Grid>
+
+    </Grid>
+</UserControl>

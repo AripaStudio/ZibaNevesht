@@ -1,0 +1,190 @@
+﻿<UserControl x:Class="ZibaNevesht.UserControls.UCaboutMe"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ZibaNevesht.UserControls"
+             xmlns:vm="clr-namespace:ZibaNevesht.ViewModels"
+             xmlns:services="clr-namespace:ZibaNevesht.Services"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <vm:MainViewModel></vm:MainViewModel>
+    </UserControl.DataContext>
+    <UserControl.Resources>
+
+        <Style x:Key="AboutCardStyle" TargetType="Border">
+            <Setter Property="Background"
+                    Value="{DynamicResource CardBackgroundBrush}"/>
+            <Setter Property="BorderBrush"
+                    Value="{DynamicResource BorderBrushTheme}"/>
+            <Setter Property="BorderThickness"
+                    Value="1"/>
+            <Setter Property="CornerRadius"
+                    Value="{DynamicResource CardCornerRadius}"/>
+            <Setter Property="Padding"
+                    Value="20"/>
+            <Setter Property="Margin"
+                    Value="8"/>
+        </Style>
+
+        <Style x:Key="AboutTextStyle" TargetType="TextBlock">
+            <Setter Property="Foreground"
+                    Value="{DynamicResource TextBrush}"/>
+            <Setter Property="FontSize"
+                    Value="16"/>
+            <Setter Property="TextWrapping"
+                    Value="Wrap"/>
+            <Setter Property="LineHeight"
+                    Value="28"/>
+        </Style>
+
+        <Style x:Key="LinkButtonStyle" TargetType="Button">
+            <Setter Property="Background"
+                    Value="{DynamicResource CardBackgroundBrush}"/>
+            <Setter Property="Foreground"
+                    Value="{DynamicResource TextBrush}"/>
+            <Setter Property="BorderBrush"
+                    Value="{DynamicResource BorderBrushTheme}"/>
+            <Setter Property="BorderThickness"
+                    Value="1"/>
+            <Setter Property="Height"
+                    Value="48"/>
+            <Setter Property="HorizontalAlignment"
+                    Value="Stretch"/>
+            <Setter Property="Margin"
+                    Value="0,5"/>
+            <Setter Property="Padding"
+                    Value="15,5"/>
+            <Setter Property="FontSize"
+                    Value="15"/>
+            <Setter Property="FontWeight"
+                    Value="SemiBold"/>
+            <Setter Property="Cursor"
+                    Value="Hand"/>
+        </Style>
+
+        <Style x:Key="ImportantLinkButtonStyle"
+               TargetType="Button"
+               BasedOn="{StaticResource LinkButtonStyle}">
+            <Setter Property="Background"
+                    Value="{DynamicResource PrimaryBrush}"/>
+            <Setter Property="Foreground"
+                    Value="White"/>
+            <Setter Property="BorderBrush"
+                    Value="{DynamicResource PrimaryBrush}"/>
+            <Setter Property="Height"
+                    Value="52"/>
+            <Setter Property="FontSize"
+                    Value="16"/>
+            <Setter Property="FontWeight"
+                    Value="Bold"/>
+        </Style>
+
+    </UserControl.Resources>
+
+
+    <Grid Background="{DynamicResource PageBackgroundBrush}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <!-- Header -->
+
+        <Border Grid.Row="0"
+                Margin="15"
+                Padding="12"
+                Background="{DynamicResource CardBackgroundBrush}"
+                CornerRadius="{DynamicResource CardCornerRadius}"
+                BorderBrush="{DynamicResource BorderBrushTheme}"
+                BorderThickness="1">
+
+            <TextBlock FontSize="22"
+                       HorizontalAlignment="Center"
+                       Foreground="{DynamicResource TextBrush}"
+                       FontFamily="{DynamicResource PersianFont}">
+
+                <Run Text="{Binding Path=[AboutHeaderPrefix], Source={x:Static services:LocalizationProvider.Instance}, Mode=OneWay}"/>
+
+                <Run Text="{Binding Path=[AboutHeaderTitle], Source={x:Static services:LocalizationProvider.Instance}, Mode=OneWay}"
+                     FontWeight="Bold"
+                     Foreground="{DynamicResource PrimaryBrush}"/>
+
+                <Run Text="{Binding Path=[AboutHeaderSuffix], Source={x:Static services:LocalizationProvider.Instance}, Mode=OneWay}"/>
+
+            </TextBlock>
+
+        </Border>
+
+
+        <!-- Main Content -->
+
+        <Border Grid.Row="1"
+                Style="{StaticResource AboutCardStyle}"
+                Margin="15,5,15,15">
+
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+
+                <StackPanel>
+
+                    <!-- About Text -->
+
+                    <TextBlock Text="{Binding Path=[AboutDescription], Source={x:Static services:LocalizationProvider.Instance}, Mode=OneWay}"
+                               Style="{StaticResource AboutTextStyle}"
+                               FlowDirection="RightToLeft"
+                               FontFamily="{DynamicResource PersianFont}"
+                               Margin="5,5,5,20"/>
+
+
+                    <!-- Links -->
+
+                    <TextBlock Text="{Binding Path=[AboutLinksTitle], Source={x:Static services:LocalizationProvider.Instance}, Mode=OneWay}"
+                               Foreground="{DynamicResource TextBrush}"
+                               FontSize="18"
+                               FontWeight="Bold"
+                               FontFamily="{DynamicResource PersianFont}"
+                               Margin="5,5,5,10"/>
+
+
+                    <!-- Main Website -->
+
+                    <Button Content="{Binding Path=[AboutWebsiteLink], Source={x:Static services:LocalizationProvider.Instance}, Mode=OneWay}"
+                            Style="{StaticResource ImportantLinkButtonStyle}"
+                            Command="{Binding VmAboutmePage.OpenWebsiteCommandCommand}"
+                            FontFamily="{DynamicResource PersianFont}"/>
+
+
+                    <!-- Telegram Channel -->
+
+                    <Button Content="{Binding Path=[AboutTelegramChannel], Source={x:Static services:LocalizationProvider.Instance}, Mode=OneWay}"
+                            Style="{StaticResource ImportantLinkButtonStyle}"
+                            Command="{Binding VmAboutmePage.OpenTelegramChannelCommandCommand}"
+                            FontFamily="{DynamicResource PersianFont}"/>
+
+
+                    <!-- GitHub -->
+
+                    <Button Content="{Binding Path=[AboutGithub], Source={x:Static services:LocalizationProvider.Instance}, Mode=OneWay}"
+                            Style="{StaticResource LinkButtonStyle}"
+                            Command="{Binding VmAboutmePage.OpenGithubCommandCommand}"
+                            FontFamily="{DynamicResource PersianFont}"/>
+
+
+                    <!-- Personal Telegram -->
+
+                    <Button Content="{Binding Path=[AboutPersonalTelegram], Source={x:Static services:LocalizationProvider.Instance}, Mode=OneWay}"
+                            Style="{StaticResource LinkButtonStyle}"
+                            Command="{Binding VmAboutmePage.OpenPersonalTelegramCommandCommand}"
+                            FontFamily="{DynamicResource PersianFont}"/>
+
+                </StackPanel>
+
+            </ScrollViewer>
+
+        </Border>
+
+    </Grid>
+</UserControl>

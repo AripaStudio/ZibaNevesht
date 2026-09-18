@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:ZibaNevesht"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+         <ResourceDictionary>
+             <ResourceDictionary.MergedDictionaries>
+                 <ResourceDictionary Source="Assets/theme/DarkTheme.xaml"></ResourceDictionary>
+                 <ResourceDictionary Source="Assets/Languages/PersianLang.xaml"></ResourceDictionary>
+             </ResourceDictionary.MergedDictionaries>
+         </ResourceDictionary>
     </Application.Resources>
 </Application>

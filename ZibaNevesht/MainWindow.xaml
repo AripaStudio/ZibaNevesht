@@ -4,16 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZibaNevesht"
+        xmlns:vm="clr-namespace:ZibaNevesht.ViewModels"
+        xmlns:uc="clr-namespace:ZibaNevesht.UserControls"
         mc:Ignorable="d"
-        Title="ZibaNevesht" Height="150" Width="300">
-    <Grid Background="DarkSlateGray">
-
-     <StackPanel>
-         <Label FontSize="22" HorizontalAlignment="Center" FontWeight="Bold">به زیبانوشت خوش آمدید</Label>
-            <CheckBox Name="CheckBoxStartZibaNevesht"
-                      Checked="StartZibaNevesht_OnChecked"
-                Margin="0,50,0,0" FontWeight="Bold" HorizontalAlignment="Center" Content="شروع/پایان زیبانوشت"></CheckBox>
-         
-     </StackPanel>
+        Title="ZibaNevesht" Height="{Binding MainWinHeight}" Width="{Binding MainWinWidth}">
+    <Window.DataContext>
+        <vm:VMzibaNeveshChakameNevisanPage></vm:VMzibaNeveshChakameNevisanPage>
+    </Window.DataContext>
+    <Grid>
+        <uc:UCmainZibaNevesht></uc:UCmainZibaNevesht>
     </Grid>
 </Window>
